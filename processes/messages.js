@@ -24,8 +24,8 @@ module.exports = function processMessage(event) {
                 },
                 body:
                 {
-                    userID: process.env.USERID,
-                    searchTerm: text
+                    'business_id': business_id,
+                    'contact_id': contact_id
                 },
                 json: true
             };
