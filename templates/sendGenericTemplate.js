@@ -34,14 +34,3 @@ module.exports = function sendGenericTemplate(recipientId, respBody) {
         }
     })
 }
-
-//Accept POST request at /webhook endpoints
-app.post('/webhook', (res, req) => {
-    res.status(200).send ('EVENT_RECIEVED');
-
-    const body = req.body;
-
-    if (body.object ==== 'page') {
-        
- }
-});
