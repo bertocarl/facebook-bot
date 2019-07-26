@@ -8,7 +8,7 @@ const sendMessage = require('../templates/sendMessage');
 
      if (payload === 'WELCOME') {
         request({
-            url: "https://graph.facebook.com/v2.6/${user_id}?fields=first_name,last_name,profile_pic" + senderID,
+            url: "https://graph.facebook.com/v2.6/${user_id}?fields=first_name" + senderID,
             qs: {
                 access_token: process.env.PAGE_ACCESS_TOKEN,
                 
