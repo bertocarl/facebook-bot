@@ -3,7 +3,7 @@ const request = require('request');
 module.exports = function sendGenericTemplate(recipientId, respBody) {
     console.log(respBody);
     const messageValue = [];
-    for (let i = 0; i < respBody.length; i++) { // I dont like using forEach
+    for (let i = 0; i < respBody.length; i++) {
         let obj = {
             "title":respBody[i].message_title,
             "contact_id": respBody[i].contact_id,

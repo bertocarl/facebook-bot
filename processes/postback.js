@@ -15,7 +15,7 @@ const sendMessage = require('../templates/sendMessage');
             },
             method: "GET"
         }, function(error, response, body) {
-            let greeting = '';
+            let greeting = 'Hello';
             if (error) {
                 console.error("Error getting user name: " + error);
             } else {
