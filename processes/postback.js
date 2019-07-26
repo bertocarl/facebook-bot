@@ -8,10 +8,10 @@ const sendMessage = require('../templates/sendMessage');
 
      if (payload === 'WELCOME') {
         request({
-            url: "https://graph.facebook.com/v2.6/" + senderID,
+            url: "https://graph.facebook.com/v2.6/${user_id}?fields=first_name,last_name,profile_pic" + senderID,
             qs: {
                 access_token: process.env.PAGE_ACCESS_TOKEN,
-                fields: "first_name"
+                
             },
             method: "GET"
         }, function(error, response, body) {
@@ -21,7 +21,7 @@ const sendMessage = require('../templates/sendMessage');
             } else {
                 let bodyObject = JSON.parse(body);
                 console.log(bodyObject);
-                name = bodyObject.first_name;
+                name = bodyObject.first_name + bodyObject.last_name + bodyObject.profile_pic;
                 greeting = "Hello " + name  + ". ";
             }
             let message = greeting + "Welcome to Talkliftbot. Hope you are doing good today";
