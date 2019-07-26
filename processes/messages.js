@@ -24,8 +24,8 @@ module.exports = function processMessage(event) {
                 },
                 body:
                 {
-                    'business_id': business_id,
-                    'contact_id': contact_id
+                    'sender_id': sender_id,
+                    
                 },
                 json: true
             };

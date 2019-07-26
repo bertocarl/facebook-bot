@@ -21,12 +21,12 @@ const sendMessage = require('../templates/sendMessage');
             } else {
                 let bodyObject = JSON.parse(body);
                 console.log(bodyObject);
-                name = bodyObject.first_name + bodyObject.last_name + bodyObject.profile_pic;
+                name = bodyObject.first_name;
                 greeting = "Hello " + name  + ". ";
             }
-            let message = greeting + "Welcome to Talkliftbot. Hope you are doing good today";
+            let message = greeting + "Welcome to Talkliftbot!";
             let message2 = "How can I assist you?"
-            let message3 = "please type in which services you would like: We offer business automation using chatbots";
+            let message3 = "please type in which services you would like?";
             senderAction(senderID);
             sendMessage(senderID, {text: message}).then(() => {
                 sendMessage(senderID, { text: message2 }).then(() => {

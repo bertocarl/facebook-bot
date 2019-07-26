@@ -14,9 +14,9 @@ app.use(morgan('dev')); // log every request to the console.
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(bodyParser.json()); 
 
-
 // app routes
 require('./routes/webhook_verify')(app);
+require('./routes/jwt_token.js')(app);
 
 // warming up the engines !! setta !! go !!!.
 app.listen(app.get('port'), function() {
